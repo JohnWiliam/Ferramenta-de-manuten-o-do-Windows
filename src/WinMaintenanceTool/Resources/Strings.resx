@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, ...</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, ...</value></resheader>
+  <data name="AppTitle" xml:space="preserve"><value>Windows Maintenance Tool</value></data>
+  <data name="HomeTitle" xml:space="preserve"><value>Windows Maintenance Tool</value></data>
+  <data name="HomeSubtitle" xml:space="preserve"><value>Choose a section below and run maintenance commands with real-time output.</value></data>
+  <data name="HomeSfcDesc" xml:space="preserve"><value>Checks protected system files and repairs corruption when possible.</value></data>
+  <data name="HomeDismDesc" xml:space="preserve"><value>Analyzes and repairs the Windows image and component store health.</value></data>
+  <data name="SfcTitle" xml:space="preserve"><value>SFC (System File Checker)</value></data>
+  <data name="SfcDescription" xml:space="preserve"><value>SFC verifies protected files and replaces damaged files with valid versions.</value></data>
+  <data name="SfcScanNowDesc" xml:space="preserve"><value>Scans all protected system files and repairs issues automatically.</value></data>
+  <data name="SfcVerifyOnlyDesc" xml:space="preserve"><value>Scans all protected system files without repairing.</value></data>
+  <data name="DismTitle" xml:space="preserve"><value>DISM (Deployment Imaging and Servicing Management)</value></data>
+  <data name="DismDescription" xml:space="preserve"><value>DISM detects and repairs corruption in Windows images and the component store.</value></data>
+  <data name="DismCheckHealthDesc" xml:space="preserve"><value>Checks if the image is flagged as corrupted and repairable.</value></data>
+  <data name="DismScanHealthDesc" xml:space="preserve"><value>Performs a deeper scan for corruption in the component store.</value></data>
+  <data name="DismRestoreHealthDesc" xml:space="preserve"><value>Detects and repairs corruption automatically.</value></data>
+  <data name="DismAnalyzeDesc" xml:space="preserve"><value>Analyzes the state and size of the component store.</value></data>
+  <data name="DismCleanupDesc" xml:space="preserve"><value>Removes replaced components and reduces storage usage.</value></data>
+  <data name="DismResetBaseDesc" xml:space="preserve"><value>Consolidates base components and removes uninstall data for integrated updates.</value></data>
+  <data name="SettingsTitle" xml:space="preserve"><value>Settings</value></data>
+  <data name="ProcessCompleted" xml:space="preserve"><value>Process completed.</value></data>
+  <data name="ExecutionError" xml:space="preserve"><value>Execution error</value></data>
+</root>
