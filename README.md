@@ -1,6 +1,6 @@
 # WinMaintenanceTool
 
-Aplicação desktop em **C# 14 + .NET 10** (WPF + WPF-UI 4.1) para executar comandos de manutenção **SFC** e **DISM** em uma interface moderna para Windows 11.
+Aplicação desktop em **C# 14 + .NET 10** (WPF + WPF-UI 4.1) para executar comandos de manutenção **SFC** e **DISM** em uma interface moderna usando o Fluent Desing do Windows 11.
 
 ## Estrutura
 
