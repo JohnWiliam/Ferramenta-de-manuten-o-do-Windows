@@ -17,24 +17,24 @@
             <ItemsControl ItemsSource="{Binding Actions}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <ui:Card Margin="0,0,0,8" Padding="14">
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="Auto" />
-                                </Grid.ColumnDefinitions>
-
+                        <Button Padding="0"
+                                Margin="0,0,0,8"
+                                Background="Transparent"
+                                BorderThickness="0"
+                                HorizontalContentAlignment="Stretch"
+                                VerticalContentAlignment="Stretch"
+                                Command="{Binding DataContext.RunCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                CommandParameter="{Binding}">
+                            <ui:Card Padding="14">
                                 <StackPanel>
                                     <TextBlock Text="{Binding Title}" FontWeight="SemiBold" FontSize="15" />
-                                    <TextBlock Text="{Binding Description}" TextWrapping="Wrap" Margin="0,4,0,0" Opacity="0.9" />
+                                    <TextBlock Text="{Binding Description}" TextWrapping="Wrap" Margin="0,4,0,8" Opacity="0.9" />
+                                    <TextBlock Text="{Binding DataContext.RunButtonLabel, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                               FontWeight="SemiBold"
+                                               Opacity="0.85" />
                                 </StackPanel>
-
-                                <Button Grid.Column="1" VerticalAlignment="Center" Margin="16,0,0,0"
-                                        Content="{Binding DataContext.RunButtonLabel, RelativeSource={RelativeSource AncestorType=UserControl}}"
-                                        Command="{Binding DataContext.RunCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
-                                        CommandParameter="{Binding}" />
-                            </Grid>
-                        </ui:Card>
+                            </ui:Card>
+                        </Button>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>

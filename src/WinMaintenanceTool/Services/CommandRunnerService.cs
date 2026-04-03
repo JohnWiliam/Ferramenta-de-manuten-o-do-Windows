@@ -27,22 +27,23 @@ public sealed class CommandRunnerService : ICommandRunnerService
             StandardErrorEncoding = processEncoding
         };
 
-        using var process = new Process { StartInfo = startInfo, EnableRaisingEvents = true };
-        var completion = new TaskCompletionSource<int>();
+        using var process = new Process { StartInfo = startInfo };
 
         process.OutputDataReceived += (_, e) =>
         {
             if (!string.IsNullOrWhiteSpace(e.Data))
-                onOutput(e.Data);
+            {
+                SafeOutput(onOutput, e.Data);
+            }
         };
 
         process.ErrorDataReceived += (_, e) =>
         {
             if (!string.IsNullOrWhiteSpace(e.Data))
-                onOutput(e.Data);
+            {
+                SafeOutput(onOutput, e.Data);
+            }
         };
-
-        process.Exited += (_, _) => completion.TrySetResult(process.ExitCode);
 
         if (!process.Start())
             throw new InvalidOperationException("Could not start process.");
@@ -63,8 +64,20 @@ public sealed class CommandRunnerService : ICommandRunnerService
             }
         });
 
-        var exitCode = await completion.Task;
-        onOutput($"Exit code: {exitCode}");
+        await process.WaitForExitAsync(cancellationToken);
+        SafeOutput(onOutput, $"Exit code: {process.ExitCode}");
+    }
+
+    private static void SafeOutput(Action<string> onOutput, string line)
+    {
+        try
+        {
+            onOutput(line);
+        }
+        catch
+        {
+            // Não interromper a aplicação caso a UI esteja descartando callbacks assíncronos.
+        }
     }
 
     private static Encoding ResolveProcessEncoding()

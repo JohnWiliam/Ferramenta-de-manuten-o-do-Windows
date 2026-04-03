@@ -96,9 +96,25 @@ public partial class App : Application
 
     private void OnUnhandledException(object? sender, UnhandledExceptionEventArgs e)
     {
-        if (e.ExceptionObject is Exception exception)
+        if (e.ExceptionObject is not Exception exception)
+            return;
+
+        WriteStartupLog("AppDomain unhandled exception", exception);
+
+        try
         {
-            WriteStartupLog("AppDomain unhandled exception", exception);
+            Dispatcher.Invoke(() =>
+            {
+                MessageBox.Show(
+                    $"O aplicativo foi encerrado por um erro não tratado:{Environment.NewLine}{Environment.NewLine}{exception.Message}{Environment.NewLine}{Environment.NewLine}Log: {_logPath}",
+                    "WinMaintenanceTool",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+            });
+        }
+        catch
+        {
+            // Sem fallback adicional caso nem a UI esteja disponível.
         }
     }
 

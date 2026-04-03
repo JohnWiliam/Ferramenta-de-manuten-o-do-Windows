@@ -1,4 +1,5 @@
 using System.Collections.ObjectModel;
+using System.Globalization;
 using System.Text.RegularExpressions;
 using System.Windows;
 using WinMaintenanceTool.Models;
@@ -99,13 +100,16 @@ public abstract partial class MaintenancePageViewModel : ViewModelBase
 
         try
         {
-            var split = action.Command.Split(' ', 2, StringSplitOptions.TrimEntries);
-            var fileName = split[0];
-            var arguments = split.Length > 1 ? split[1] : string.Empty;
-
-            await _commandRunnerService.RunAsync(fileName, arguments, line =>
+            await _commandRunnerService.RunAsync("cmd.exe", $"/c {action.Command}", line =>
             {
-                Application.Current.Dispatcher.Invoke(() => AppendLogLine(line));
+                var dispatcher = Application.Current?.Dispatcher;
+                if (dispatcher is null)
+                {
+                    AppendLogLine(line);
+                    return;
+                }
+
+                _ = dispatcher.BeginInvoke(() => AppendLogLine(line));
             });
 
             Output += $"[{DateTime.Now:HH:mm:ss}] {Strings.ProcessCompleted}{Environment.NewLine}";
@@ -123,7 +127,7 @@ public abstract partial class MaintenancePageViewModel : ViewModelBase
     private void AppendLogLine(string line)
     {
         var match = ProgressRegex().Match(line);
-        if (match.Success && double.TryParse(match.Groups[1].Value.Replace(',', '.'), System.Globalization.NumberStyles.Number, System.Globalization.CultureInfo.InvariantCulture, out var percentage))
+        if (match.Success && double.TryParse(match.Groups[1].Value.Replace(',', '.'), NumberStyles.Number, CultureInfo.InvariantCulture, out var percentage))
         {
             ProgressValue = Math.Clamp(percentage, 0, 100);
         }
