@@ -5,23 +5,56 @@
   <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, ...</value></resheader>
   <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, ...</value></resheader>
   <data name="AppTitle" xml:space="preserve"><value>Windows Maintenance Tool</value></data>
-  <data name="HomeTitle" xml:space="preserve"><value>Windows Maintenance Tool</value></data>
-  <data name="HomeSubtitle" xml:space="preserve"><value>Choose a section below and run maintenance commands with real-time output.</value></data>
+  <data name="NavHome" xml:space="preserve"><value>Home</value></data>
+  <data name="NavSfc" xml:space="preserve"><value>SFC</value></data>
+  <data name="NavDism" xml:space="preserve"><value>DISM</value></data>
+  <data name="NavSettings" xml:space="preserve"><value>Settings</value></data>
+
+  <data name="HomeTitle" xml:space="preserve"><value>Maintenance dashboard</value></data>
+  <data name="HomeSubtitle" xml:space="preserve"><value>Select a maintenance area to start diagnostics and repairs.</value></data>
   <data name="HomeSfcDesc" xml:space="preserve"><value>Checks protected system files and repairs corruption when possible.</value></data>
   <data name="HomeDismDesc" xml:space="preserve"><value>Analyzes and repairs the Windows image and component store health.</value></data>
+  <data name="OpenSfcButton" xml:space="preserve"><value>Open SFC</value></data>
+  <data name="OpenDismButton" xml:space="preserve"><value>Open DISM</value></data>
+
   <data name="SfcTitle" xml:space="preserve"><value>SFC (System File Checker)</value></data>
   <data name="SfcDescription" xml:space="preserve"><value>SFC verifies protected files and replaces damaged files with valid versions.</value></data>
+  <data name="SfcScanNowTitle" xml:space="preserve"><value>Full integrity scan</value></data>
   <data name="SfcScanNowDesc" xml:space="preserve"><value>Scans all protected system files and repairs issues automatically.</value></data>
+  <data name="SfcVerifyOnlyTitle" xml:space="preserve"><value>Verification only</value></data>
   <data name="SfcVerifyOnlyDesc" xml:space="preserve"><value>Scans all protected system files without repairing.</value></data>
+
   <data name="DismTitle" xml:space="preserve"><value>DISM (Deployment Imaging and Servicing Management)</value></data>
   <data name="DismDescription" xml:space="preserve"><value>DISM detects and repairs corruption in Windows images and the component store.</value></data>
+  <data name="DismCheckHealthTitle" xml:space="preserve"><value>Check health</value></data>
   <data name="DismCheckHealthDesc" xml:space="preserve"><value>Checks if the image is flagged as corrupted and repairable.</value></data>
+  <data name="DismScanHealthTitle" xml:space="preserve"><value>Scan health</value></data>
   <data name="DismScanHealthDesc" xml:space="preserve"><value>Performs a deeper scan for corruption in the component store.</value></data>
+  <data name="DismRestoreHealthTitle" xml:space="preserve"><value>Restore health</value></data>
   <data name="DismRestoreHealthDesc" xml:space="preserve"><value>Detects and repairs corruption automatically.</value></data>
+  <data name="DismAnalyzeTitle" xml:space="preserve"><value>Analyze component store</value></data>
   <data name="DismAnalyzeDesc" xml:space="preserve"><value>Analyzes the state and size of the component store.</value></data>
+  <data name="DismCleanupTitle" xml:space="preserve"><value>Start cleanup</value></data>
   <data name="DismCleanupDesc" xml:space="preserve"><value>Removes replaced components and reduces storage usage.</value></data>
+  <data name="DismResetBaseTitle" xml:space="preserve"><value>Reset base</value></data>
   <data name="DismResetBaseDesc" xml:space="preserve"><value>Consolidates base components and removes uninstall data for integrated updates.</value></data>
+
   <data name="SettingsTitle" xml:space="preserve"><value>Settings</value></data>
+  <data name="SettingsLanguageLabel" xml:space="preserve"><value>Language</value></data>
+  <data name="SettingsThemeLabel" xml:space="preserve"><value>Theme</value></data>
+  <data name="ApplyLanguageButton" xml:space="preserve"><value>Apply language</value></data>
+  <data name="ApplyThemeButton" xml:space="preserve"><value>Apply theme</value></data>
+  <data name="LanguageSystem" xml:space="preserve"><value>System default</value></data>
+  <data name="LanguagePtBr" xml:space="preserve"><value>Brazilian Portuguese</value></data>
+  <data name="LanguageEnglish" xml:space="preserve"><value>English</value></data>
+  <data name="ThemeSystem" xml:space="preserve"><value>System default</value></data>
+  <data name="ThemeLight" xml:space="preserve"><value>Light</value></data>
+  <data name="ThemeDark" xml:space="preserve"><value>Dark</value></data>
+
+  <data name="RunButton" xml:space="preserve"><value>Run</value></data>
+  <data name="ExecutionLogTitle" xml:space="preserve"><value>Execution log</value></data>
+  <data name="NoActionSelected" xml:space="preserve"><value>No action selected yet.</value></data>
+  <data name="RunningAction" xml:space="preserve"><value>Running action</value></data>
   <data name="ProcessCompleted" xml:space="preserve"><value>Process completed.</value></data>
   <data name="ExecutionError" xml:space="preserve"><value>Execution error</value></data>
 </root>

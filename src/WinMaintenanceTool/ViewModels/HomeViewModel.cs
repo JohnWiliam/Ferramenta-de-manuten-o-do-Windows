@@ -8,6 +8,8 @@ public sealed class HomeViewModel : ViewModelBase
     public string Subtitle { get; private set; } = string.Empty;
     public string SfcDescription { get; private set; } = string.Empty;
     public string DismDescription { get; private set; } = string.Empty;
+    public string OpenSfcLabel { get; private set; } = string.Empty;
+    public string OpenDismLabel { get; private set; } = string.Empty;
 
     public void Refresh()
     {
@@ -15,10 +17,14 @@ public sealed class HomeViewModel : ViewModelBase
         Subtitle = Strings.HomeSubtitle;
         SfcDescription = Strings.HomeSfcDesc;
         DismDescription = Strings.HomeDismDesc;
+        OpenSfcLabel = Strings.OpenSfcButton;
+        OpenDismLabel = Strings.OpenDismButton;
 
         RaisePropertyChanged(nameof(Title));
         RaisePropertyChanged(nameof(Subtitle));
         RaisePropertyChanged(nameof(SfcDescription));
         RaisePropertyChanged(nameof(DismDescription));
+        RaisePropertyChanged(nameof(OpenSfcLabel));
+        RaisePropertyChanged(nameof(OpenDismLabel));
     }
 }

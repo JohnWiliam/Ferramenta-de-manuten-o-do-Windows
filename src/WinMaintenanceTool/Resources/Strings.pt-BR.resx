@@ -5,23 +5,56 @@
   <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, ...</value></resheader>
   <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, ...</value></resheader>
   <data name="AppTitle" xml:space="preserve"><value>Ferramenta de manutenção do Windows</value></data>
-  <data name="HomeTitle" xml:space="preserve"><value>Ferramenta de manutenção do Windows</value></data>
-  <data name="HomeSubtitle" xml:space="preserve"><value>Escolha uma seção abaixo e execute comandos de manutenção com saída em tempo real.</value></data>
+  <data name="NavHome" xml:space="preserve"><value>Início</value></data>
+  <data name="NavSfc" xml:space="preserve"><value>SFC</value></data>
+  <data name="NavDism" xml:space="preserve"><value>DISM</value></data>
+  <data name="NavSettings" xml:space="preserve"><value>Configurações</value></data>
+
+  <data name="HomeTitle" xml:space="preserve"><value>Painel de manutenção</value></data>
+  <data name="HomeSubtitle" xml:space="preserve"><value>Selecione uma área de manutenção para iniciar diagnósticos e reparos.</value></data>
   <data name="HomeSfcDesc" xml:space="preserve"><value>Verifica arquivos protegidos do sistema e repara corrupções quando possível.</value></data>
   <data name="HomeDismDesc" xml:space="preserve"><value>Analisa e repara a integridade da imagem do Windows e do armazenamento de componentes.</value></data>
+  <data name="OpenSfcButton" xml:space="preserve"><value>Abrir SFC</value></data>
+  <data name="OpenDismButton" xml:space="preserve"><value>Abrir DISM</value></data>
+
   <data name="SfcTitle" xml:space="preserve"><value>SFC (System File Checker)</value></data>
   <data name="SfcDescription" xml:space="preserve"><value>O SFC verifica arquivos protegidos e substitui arquivos danificados por versões válidas.</value></data>
+  <data name="SfcScanNowTitle" xml:space="preserve"><value>Verificação completa de integridade</value></data>
   <data name="SfcScanNowDesc" xml:space="preserve"><value>Examina todos os arquivos protegidos e corrige problemas automaticamente.</value></data>
+  <data name="SfcVerifyOnlyTitle" xml:space="preserve"><value>Somente verificação</value></data>
   <data name="SfcVerifyOnlyDesc" xml:space="preserve"><value>Examina todos os arquivos protegidos sem executar reparo.</value></data>
+
   <data name="DismTitle" xml:space="preserve"><value>DISM (Gerenciamento e Manutenção de Imagens)</value></data>
-  <data name="DismDescription" xml:space="preserve"><value>O DISM detecta e corrige corrupção na imagem do Windows e no component store.</value></data>
+  <data name="DismDescription" xml:space="preserve"><value>O DISM detecta e corrige corrupção na imagem do Windows e no armazenamento de componentes.</value></data>
+  <data name="DismCheckHealthTitle" xml:space="preserve"><value>Checar integridade</value></data>
   <data name="DismCheckHealthDesc" xml:space="preserve"><value>Verifica se a imagem foi marcada como corrompida e se o dano é reparável.</value></data>
-  <data name="DismScanHealthDesc" xml:space="preserve"><value>Faz uma varredura mais profunda em busca de corrupção no component store.</value></data>
+  <data name="DismScanHealthTitle" xml:space="preserve"><value>Escanear integridade</value></data>
+  <data name="DismScanHealthDesc" xml:space="preserve"><value>Faz uma varredura mais profunda em busca de corrupção no armazenamento de componentes.</value></data>
+  <data name="DismRestoreHealthTitle" xml:space="preserve"><value>Restaurar integridade</value></data>
   <data name="DismRestoreHealthDesc" xml:space="preserve"><value>Detecta e repara automaticamente corrupção na imagem.</value></data>
+  <data name="DismAnalyzeTitle" xml:space="preserve"><value>Analisar armazenamento</value></data>
   <data name="DismAnalyzeDesc" xml:space="preserve"><value>Analisa o estado e o tamanho do armazenamento de componentes.</value></data>
+  <data name="DismCleanupTitle" xml:space="preserve"><value>Iniciar limpeza</value></data>
   <data name="DismCleanupDesc" xml:space="preserve"><value>Remove componentes substituídos e reduz o tamanho do armazenamento.</value></data>
-  <data name="DismResetBaseDesc" xml:space="preserve"><value>Consolida a base dos componentes e remove opção de desinstalar updates integrados.</value></data>
+  <data name="DismResetBaseTitle" xml:space="preserve"><value>Resetar base</value></data>
+  <data name="DismResetBaseDesc" xml:space="preserve"><value>Consolida a base dos componentes e remove opção de desinstalar atualizações integradas.</value></data>
+
   <data name="SettingsTitle" xml:space="preserve"><value>Configurações</value></data>
+  <data name="SettingsLanguageLabel" xml:space="preserve"><value>Idioma</value></data>
+  <data name="SettingsThemeLabel" xml:space="preserve"><value>Tema</value></data>
+  <data name="ApplyLanguageButton" xml:space="preserve"><value>Aplicar idioma</value></data>
+  <data name="ApplyThemeButton" xml:space="preserve"><value>Aplicar tema</value></data>
+  <data name="LanguageSystem" xml:space="preserve"><value>Padrão do sistema</value></data>
+  <data name="LanguagePtBr" xml:space="preserve"><value>Português do Brasil</value></data>
+  <data name="LanguageEnglish" xml:space="preserve"><value>Inglês</value></data>
+  <data name="ThemeSystem" xml:space="preserve"><value>Padrão do sistema</value></data>
+  <data name="ThemeLight" xml:space="preserve"><value>Claro</value></data>
+  <data name="ThemeDark" xml:space="preserve"><value>Escuro</value></data>
+
+  <data name="RunButton" xml:space="preserve"><value>Executar</value></data>
+  <data name="ExecutionLogTitle" xml:space="preserve"><value>Log de execução</value></data>
+  <data name="NoActionSelected" xml:space="preserve"><value>Nenhuma opção executada ainda.</value></data>
+  <data name="RunningAction" xml:space="preserve"><value>Executando ação</value></data>
   <data name="ProcessCompleted" xml:space="preserve"><value>Processo concluído.</value></data>
   <data name="ExecutionError" xml:space="preserve"><value>Erro de execução</value></data>
 </root>

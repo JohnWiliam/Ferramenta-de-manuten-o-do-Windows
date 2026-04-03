@@ -8,13 +8,13 @@
                  xmlns:views="clr-namespace:WinMaintenanceTool.Views"
                  mc:Ignorable="d"
                  Title="{Binding AppTitle}"
-                 Width="1120"
-                 Height="760"
-                 MinWidth="1080"
-                 MinHeight="720"
+                 Width="920"
+                 Height="680"
+                 MinWidth="860"
+                 MinHeight="620"
                  ResizeMode="CanResize"
                  WindowStartupLocation="CenterScreen"
-                 ExtendsContentIntoTitleBar="True"
+                 ExtendsContentIntoTitleBar="False"
                  WindowBackdropType="Mica">
     <ui:FluentWindow.Resources>
         <DataTemplate DataType="{x:Type vm:HomeViewModel}">
@@ -35,18 +35,27 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <DockPanel Grid.Row="0" LastChildFill="False" Margin="0,0,0,12">
-            <TextBlock Text="{Binding AppTitle}" FontSize="22" FontWeight="SemiBold" VerticalAlignment="Center" />
-            <Button Content="⌂" Width="36" Height="36" Margin="12,0,0,0" Command="{Binding NavigateHomeCommand}" ToolTip="Home" />
-        </DockPanel>
+        <ui:Card Grid.Row="0" Padding="8" Margin="0,0,0,12">
+            <DockPanel LastChildFill="False">
+                <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
+                    <Button Margin="0,0,8,0" Command="{Binding NavigateHomeCommand}" ToolTip="{Binding NavHomeLabel}">
+                        <StackPanel Orientation="Horizontal">
+                            <ui:SymbolIcon Symbol="Home24" Margin="0,0,6,0" />
+                            <TextBlock Text="{Binding NavHomeLabel}" />
+                        </StackPanel>
+                    </Button>
+                    <Button Margin="0,0,8,0" Command="{Binding NavigateSfcCommand}" Content="{Binding NavSfcLabel}" />
+                    <Button Command="{Binding NavigateDismCommand}" Content="{Binding NavDismLabel}" />
+                </StackPanel>
+
+                <Button DockPanel.Dock="Right" Command="{Binding NavigateSettingsCommand}" ToolTip="{Binding NavSettingsLabel}">
+                    <ui:SymbolIcon Symbol="Settings24" />
+                </Button>
+            </DockPanel>
+        </ui:Card>
 
         <ContentControl Grid.Row="1" Content="{Binding CurrentPageViewModel}" />
-
-        <DockPanel Grid.Row="2" Margin="0,12,0,0">
-            <Button Content="⚙️" Width="40" Height="40" HorizontalAlignment="Right" Command="{Binding NavigateSettingsCommand}" ToolTip="Settings" />
-        </DockPanel>
     </Grid>
 </ui:FluentWindow>

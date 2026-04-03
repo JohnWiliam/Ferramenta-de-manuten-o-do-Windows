@@ -1,6 +1,5 @@
 using WinMaintenanceTool.Resources;
 using WinMaintenanceTool.Services;
-using Wpf.Ui.Appearance;
 
 namespace WinMaintenanceTool.ViewModels;
 
@@ -66,11 +65,25 @@ public sealed class MainViewModel : ViewModelBase
     }
 
     public string AppTitle { get; private set; } = string.Empty;
+    public string NavHomeLabel { get; private set; } = string.Empty;
+    public string NavSfcLabel { get; private set; } = string.Empty;
+    public string NavDismLabel { get; private set; } = string.Empty;
+    public string NavSettingsLabel { get; private set; } = string.Empty;
 
     private void RefreshLocalizedText()
     {
         AppTitle = Strings.AppTitle;
+        NavHomeLabel = Strings.NavHome;
+        NavSfcLabel = Strings.NavSfc;
+        NavDismLabel = Strings.NavDism;
+        NavSettingsLabel = Strings.NavSettings;
+
         RaisePropertyChanged(nameof(AppTitle));
+        RaisePropertyChanged(nameof(NavHomeLabel));
+        RaisePropertyChanged(nameof(NavSfcLabel));
+        RaisePropertyChanged(nameof(NavDismLabel));
+        RaisePropertyChanged(nameof(NavSettingsLabel));
+
         Sfc.Reload();
         Dism.Reload();
         Home.Refresh();

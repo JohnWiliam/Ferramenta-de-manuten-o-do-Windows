@@ -1,11 +1,20 @@
 using System.Diagnostics;
+using System.Globalization;
+using System.Text;
 
 namespace WinMaintenanceTool.Services;
 
 public sealed class CommandRunnerService : ICommandRunnerService
 {
+    static CommandRunnerService()
+    {
+        Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+    }
+
     public async Task RunAsync(string fileName, string arguments, Action<string> onOutput, CancellationToken cancellationToken = default)
     {
+        var processEncoding = ResolveProcessEncoding();
+
         var startInfo = new ProcessStartInfo
         {
             FileName = fileName,
@@ -14,8 +23,8 @@ public sealed class CommandRunnerService : ICommandRunnerService
             UseShellExecute = false,
             RedirectStandardOutput = true,
             RedirectStandardError = true,
-            StandardOutputEncoding = System.Text.Encoding.UTF8,
-            StandardErrorEncoding = System.Text.Encoding.UTF8
+            StandardOutputEncoding = processEncoding,
+            StandardErrorEncoding = processEncoding
         };
 
         using var process = new Process { StartInfo = startInfo, EnableRaisingEvents = true };
@@ -56,5 +65,13 @@ public sealed class CommandRunnerService : ICommandRunnerService
 
         var exitCode = await completion.Task;
         onOutput($"Exit code: {exitCode}");
+    }
+
+    private static Encoding ResolveProcessEncoding()
+    {
+        if (!OperatingSystem.IsWindows())
+            return Encoding.UTF8;
+
+        return Encoding.GetEncoding(CultureInfo.CurrentCulture.TextInfo.OEMCodePage);
     }
 }
