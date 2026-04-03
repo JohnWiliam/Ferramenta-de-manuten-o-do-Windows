@@ -16,7 +16,7 @@
                  WindowStartupLocation="CenterScreen"
                  ExtendsContentIntoTitleBar="True"
                  WindowBackdropType="Mica">
-    
+
     <ui:FluentWindow.Resources>
         <DataTemplate DataType="{x:Type vm:HomeViewModel}">
             <views:HomeView />
@@ -46,21 +46,22 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <ui:Card Grid.Row="0" Padding="8" Margin="0,0,0,12">
-                <DockPanel LastChildFill="False">
+            <ui:Card Grid.Row="0" Padding="10" Margin="0,0,0,12">
+                <DockPanel LastChildFill="True">
                     <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
-                        <Button Margin="0,0,8,0" Command="{Binding NavigateHomeCommand}" ToolTip="{Binding NavHomeLabel}">
+                        <Button Command="{Binding NavigateHomeCommand}" ToolTip="{Binding NavHomeLabel}" Padding="12,6">
                             <StackPanel Orientation="Horizontal">
                                 <ui:SymbolIcon Symbol="Home24" Margin="0,0,6,0" />
                                 <TextBlock Text="{Binding NavHomeLabel}" />
                             </StackPanel>
                         </Button>
-                        <Button Margin="0,0,8,0" Command="{Binding NavigateSfcCommand}" Content="{Binding NavSfcLabel}" />
-                        <Button Command="{Binding NavigateDismCommand}" Content="{Binding NavDismLabel}" />
                     </StackPanel>
 
-                    <Button DockPanel.Dock="Right" Command="{Binding NavigateSettingsCommand}" ToolTip="{Binding NavSettingsLabel}">
-                        <ui:SymbolIcon Symbol="Settings24" />
+                    <Button DockPanel.Dock="Right" Command="{Binding NavigateSettingsCommand}" ToolTip="{Binding NavSettingsLabel}" Padding="10,6">
+                        <StackPanel Orientation="Horizontal">
+                            <ui:SymbolIcon Symbol="Settings24" Margin="0,0,6,0" />
+                            <TextBlock Text="{Binding NavSettingsLabel}" />
+                        </StackPanel>
                     </Button>
                 </DockPanel>
             </ui:Card>

@@ -13,24 +13,61 @@
             <TextBlock Text="{Binding Subtitle}" Margin="0,6,0,0" TextWrapping="Wrap" Opacity="0.85" />
         </StackPanel>
 
-        <StackPanel Grid.Row="1" Margin="0,18,0,0">
-            <ui:Card Margin="0,0,0,10" Padding="18">
-                <StackPanel>
-                    <TextBlock Text="SFC" FontWeight="SemiBold" FontSize="20" />
-                    <TextBlock Text="{Binding SfcDescription}" TextWrapping="Wrap" Margin="0,8,0,10" />
-                    <Button Content="{Binding OpenSfcLabel}" Height="40" FontSize="14"
-                            Command="{Binding DataContext.NavigateSfcCommand, RelativeSource={RelativeSource AncestorType=Window}}" />
-                </StackPanel>
-            </ui:Card>
+        <Grid Grid.Row="1" Margin="0,18,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
 
-            <ui:Card Padding="18">
-                <StackPanel>
-                    <TextBlock Text="DISM" FontWeight="SemiBold" FontSize="20" />
-                    <TextBlock Text="{Binding DismDescription}" TextWrapping="Wrap" Margin="0,8,0,10" />
-                    <Button Content="{Binding OpenDismLabel}" Height="40" FontSize="14"
-                            Command="{Binding DataContext.NavigateDismCommand, RelativeSource={RelativeSource AncestorType=Window}}" />
-                </StackPanel>
-            </ui:Card>
-        </StackPanel>
+            <Button Grid.Column="0"
+                    Margin="0,0,8,0"
+                    Padding="0"
+                    Background="Transparent"
+                    BorderThickness="0"
+                    HorizontalContentAlignment="Stretch"
+                    VerticalContentAlignment="Stretch"
+                    Command="{Binding DataContext.NavigateSfcCommand, RelativeSource={RelativeSource AncestorType=Window}}">
+                <ui:Card Padding="18" Height="230">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <ui:SymbolIcon Symbol="Home24" FontSize="28" />
+                        <StackPanel Grid.Row="1" Margin="0,12,0,0">
+                            <TextBlock Text="SFC" FontWeight="SemiBold" FontSize="22" />
+                            <TextBlock Text="{Binding SfcDescription}" TextWrapping="Wrap" Margin="0,8,0,0" Opacity="0.9" />
+                        </StackPanel>
+                        <TextBlock Grid.Row="2" Text="{Binding OpenSfcLabel}" FontWeight="SemiBold" Opacity="0.85" />
+                    </Grid>
+                </ui:Card>
+            </Button>
+
+            <Button Grid.Column="1"
+                    Margin="8,0,0,0"
+                    Padding="0"
+                    Background="Transparent"
+                    BorderThickness="0"
+                    HorizontalContentAlignment="Stretch"
+                    VerticalContentAlignment="Stretch"
+                    Command="{Binding DataContext.NavigateDismCommand, RelativeSource={RelativeSource AncestorType=Window}}">
+                <ui:Card Padding="18" Height="230">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <ui:SymbolIcon Symbol="Settings24" FontSize="28" />
+                        <StackPanel Grid.Row="1" Margin="0,12,0,0">
+                            <TextBlock Text="DISM" FontWeight="SemiBold" FontSize="22" />
+                            <TextBlock Text="{Binding DismDescription}" TextWrapping="Wrap" Margin="0,8,0,0" Opacity="0.9" />
+                        </StackPanel>
+                        <TextBlock Grid.Row="2" Text="{Binding OpenDismLabel}" FontWeight="SemiBold" Opacity="0.85" />
+                    </Grid>
+                </ui:Card>
+            </Button>
+        </Grid>
     </Grid>
 </UserControl>
