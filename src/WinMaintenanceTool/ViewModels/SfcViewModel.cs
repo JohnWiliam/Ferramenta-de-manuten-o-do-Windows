@@ -12,7 +12,9 @@ public sealed class SfcViewModel(ICommandRunnerService commandRunnerService) : M
     public void Reload()
     {
         Actions.Clear();
-        Actions.Add(new MaintenanceAction("SFC /scannow", Strings.SfcScanNowDesc, "sfc /scannow"));
-        Actions.Add(new MaintenanceAction("SFC /verifyonly", Strings.SfcVerifyOnlyDesc, "sfc /verifyonly"));
+        Actions.Add(new MaintenanceAction(Strings.SfcScanNowTitle, Strings.SfcScanNowDesc, "sfc /scannow"));
+        Actions.Add(new MaintenanceAction(Strings.SfcVerifyOnlyTitle, Strings.SfcVerifyOnlyDesc, "sfc /verifyonly"));
+
+        RefreshCommonLocalizedText();
     }
 }

@@ -14,17 +14,17 @@
 
         <ui:Card Grid.Row="1" Margin="0,14,0,0" Padding="16">
             <StackPanel>
-                <TextBlock Text="Idioma / Language" FontWeight="SemiBold" />
+                <TextBlock Text="{Binding LanguageLabel}" FontWeight="SemiBold" />
                 <ComboBox ItemsSource="{Binding Languages}" SelectedItem="{Binding SelectedLanguage}" DisplayMemberPath="DisplayName" Margin="0,10,0,8" />
-                <Button Content="Aplicar idioma" Command="{Binding ApplyLanguageCommand}" />
+                <Button Content="{Binding ApplyLanguageLabel}" Command="{Binding ApplyLanguageCommand}" />
             </StackPanel>
         </ui:Card>
 
         <ui:Card Grid.Row="2" Margin="0,10,0,0" Padding="16">
             <StackPanel>
-                <TextBlock Text="Tema" FontWeight="SemiBold" />
+                <TextBlock Text="{Binding ThemeLabel}" FontWeight="SemiBold" />
                 <ComboBox ItemsSource="{Binding Themes}" SelectedItem="{Binding SelectedTheme}" DisplayMemberPath="DisplayName" Margin="0,10,0,8" />
-                <Button Content="Aplicar tema" Command="{Binding ApplyThemeCommand}" />
+                <Button Content="{Binding ApplyThemeLabel}" Command="{Binding ApplyThemeCommand}" />
             </StackPanel>
         </ui:Card>
     </Grid>
